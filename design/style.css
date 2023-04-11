@@ -1,0 +1,151 @@
+:root {
+  /* COLORS */
+  --hue: 210;
+  --primary: hsl(var(--hue), 85%, 56%);
+  --danger: hsl(340, 85%, 56%);
+  --warning: hsl(60, 85%, 56%);
+  --success: hsl(120, 85%, 56%);
+  --grey: hsl(210, 30%, 85%);
+  --light: hsl(210, 30%, 98%);
+  --dark: hsl(210, 30%, 15%);
+  --white: hsl(210, 30%, 100%);
+  --black: hsl(210, 30%, 10%);
+  /* TYPOGRAPHY AND FONTS */
+  --font: "Poppins", sans-serif;
+  --lg-font: 1.5rem;
+  --md-font: 0.9375rem;
+  --sm-font: 0.75rem;
+  /* OTHER */
+  --padding: 0.5rem 2rem;
+  --border-radius: 1.5rem;
+  --card-border-radius: 0.75rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  padding: 0 2.5%;
+}
+header .user {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 15rem auto 20rem;
+  margin: 5.5rem 1rem 0;
+}
+
+aside {
+  background: var(--white);
+  border-radius: var(--card-border-radius);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+aside .profile {
+  position: relative;
+}
+aside .profile .img {
+  position: absolute;
+  background: var(--light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  font-family: var(--font);
+}
+
+html {
+  font-size: var(--md-font);
+  color: var(--black);
+}
+
+body {
+  background: var(--light);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: var(--lg-font);
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  background: transparent;
+  color: var(--black);
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  color: var(--grey);
+}
+
+::placeholder {
+  opacity: 1;
+  color: var(--grey);
+}
+
+.search {
+  background: var(--light);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+}
+.search input {
+  width: 30vw;
+}
+.search i {
+  color: var(--grey);
+  font-size: var(--lg-font);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profile img {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.btn {
+  padding: var(--padding);
+  text-transform: capitalize;
+  background: var(--light);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 1rem;
+}
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.mute {
+  color: var(--grey);
+}
