@@ -1,2 +1,2 @@
 # Connect
-A fork of facebook and twitter
+A fork of Facebook and Twitter made using SASS, CSS, HTML and JavaScript
