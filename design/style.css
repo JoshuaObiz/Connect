@@ -46,18 +46,87 @@ main {
 }
 
 aside {
-  background: var(--white);
-  border-radius: var(--card-border-radius);
   position: sticky;
   top: 0;
   left: 0;
 }
 aside .profile {
+  background: var(--white);
+  border-radius: var(--card-border-radius);
   position: relative;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
 aside .profile .img {
   position: absolute;
+  top: 0;
+  left: 0;
+  border-top-right-radius: var(--card-border-radius);
+  border-top-left-radius: var(--card-border-radius);
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  cursor: pointer;
+}
+aside .profile .img img {
+  position: relative;
+  top: 1.75rem;
+}
+aside .profile .handle {
+  margin-top: 4.75rem;
+  text-align: center;
+  width: 100%;
+}
+aside .profile .handle .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+aside nav {
+  background: var(--white);
+  border-radius: var(--card-border-radius);
+  margin-bottom: 1rem;
+}
+aside nav a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 3rem;
+  position: relative;
+  padding: 1rem;
+  color: var(--primary);
+}
+aside nav a i {
+  color: var(--grey);
+}
+aside nav a.active {
   background: var(--light);
+}
+aside nav a.active::before {
+  content: "";
+  width: 0.25rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+}
+aside nav a:first-child::before {
+  border-top-left-radius: var(--card-border-radius);
+}
+aside nav a:last-child::before {
+  border-bottom-left-radius: var(--card-border-radius);
+}
+aside nav a:hover {
+  background: var(--light);
+}
+aside label {
+  width: 100%;
+  justify-content: center;
 }
 
 * {
@@ -67,6 +136,7 @@ aside .profile .img {
   border: 0;
   outline: none;
   font-family: var(--font);
+  transition: 300ms all cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 html {
@@ -78,10 +148,17 @@ body {
   background: var(--light);
   width: 100%;
   overflow-x: hidden;
+  cursor: default;
 }
 
 h2 {
   font-size: var(--lg-font);
+}
+
+h3 {
+  font-size: var(--md-font);
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 a {
@@ -133,6 +210,7 @@ input {
   background: var(--light);
   border-radius: var(--border-radius);
   font-weight: 600;
+  font-size: var(--md-font);
   cursor: pointer;
   display: inline-flex;
   gap: 1rem;
@@ -148,4 +226,19 @@ input {
 
 .mute {
   color: var(--grey);
+}
+
+.count {
+  position: absolute;
+  right: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  background: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
 }
