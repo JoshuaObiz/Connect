@@ -15,6 +15,7 @@
    --font: 'Poppins', sans-serif;
    --lg-font: 1.5rem;
    --md-font: 0.9375rem;
+   --md-font: 0.85rem;
    --sm-font: 0.75rem;
 
    /* OTHER */
@@ -45,6 +46,7 @@ main {
    display: grid;
    grid-template-columns: 15rem auto 20rem;
    margin: 5.5rem 1rem 0;
+   gap: 2rem;
 }
 
 aside {
@@ -128,6 +130,48 @@ aside {
    label{
       width: 100%;
       justify-content: center;
+   }
+}
+
+section{
+   .stories{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      .story{
+         position: relative;
+         height: 13rem;
+         border-radius: var(--card-border-radius);
+         cursor: pointer;
+         background: center no-repeat var(--white);
+         background-image: url(../img/img04.jpeg);
+         background-size: cover;
+         overflow: hidden;
+         &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3rem;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, hsl(210, 30%, 15%, 0.35), hsl(210, 30%, 98%, 0.35));
+         }
+         .profile{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            img{
+               border: 3px solid var(--primary);
+            }
+         }
+         p{
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            color: #fff;
+            font-size: var(--md2-font);
+         }
+      }
    }
 }
 
