@@ -5,6 +5,7 @@
    border: 0;
    outline: none;
    font-family: var(--font);
+   transition: 300ms all cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 html {
@@ -16,10 +17,17 @@ body {
    background: var(--light);
    width: 100%;
    overflow-x: hidden;
+   cursor: default;
 }
 
 h2 {
    font-size: var(--lg-font);
+}
+
+h3{
+   font-size: var(--md-font);
+   font-weight: 500;
+   text-transform: capitalize;
 }
 
 a {
@@ -67,6 +75,7 @@ input {
    background: var(--light);
    border-radius: var(--border-radius);
    font-weight: 600;
+   font-size: var(--md-font);
    cursor: pointer;
    display: inline-flex;
    gap: 1rem;
@@ -82,4 +91,19 @@ input {
 
 .mute{
    color: var(--grey);
+}
+
+.count{
+   position: absolute;
+   right: 1rem;
+   width: 0.75rem;
+   height: 0.75rem;
+   border-radius: 50%;
+   font-size: 0.625rem;
+   background: var(--danger);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   font-weight: 500;
 }
