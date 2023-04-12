@@ -15,12 +15,12 @@
    --font: 'Poppins', sans-serif;
    --lg-font: 1.5rem;
    --md-font: 0.9375rem;
-   --md-font: 0.85rem;
+   --md2-font: 0.85rem;
    --sm-font: 0.75rem;
 
    /* OTHER */
    --padding: 0.5rem 2rem;
-   --border-radius: 1.5rem;
+   --border-radius: 2rem;
    --card-border-radius: 0.75rem;
 }
 
@@ -58,7 +58,7 @@ aside {
       border-radius: var(--card-border-radius);
       position: relative;
       padding: 0.5rem 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       .img {
          position: absolute;
          top: 0;
@@ -91,7 +91,7 @@ aside {
    nav{
       background: var(--white);
       border-radius: var(--card-border-radius);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       a{
          display: flex;
          align-items: center;
@@ -138,6 +138,7 @@ section{
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 1rem;
+      margin-bottom: 1.5rem;
       .story{
          position: relative;
          height: 13rem;
@@ -171,6 +172,19 @@ section{
             color: #fff;
             font-size: var(--md2-font);
          }
+      }
+   }
+
+   form{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+      input[type='text']{
+         width: 100%;
       }
    }
 }
