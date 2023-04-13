@@ -2,9 +2,10 @@
   /* COLORS */
   --hue: 210;
   --primary: hsl(var(--hue), 85%, 56%);
+  --blue: hsl(210, 85%, 56%);
   --danger: hsl(340, 85%, 56%);
   --warning: hsl(60, 85%, 56%);
-  --success: hsl(120, 85%, 56%);
+  --success: hsl(110, 85%, 56%);
   --grey: hsl(210, 30%, 85%);
   --light: hsl(210, 30%, 98%);
   --dark: hsl(210, 30%, 15%);
@@ -13,11 +14,13 @@
   /* TYPOGRAPHY AND FONTS */
   --font: "Poppins", sans-serif;
   --lg-font: 1.5rem;
-  --md-font: 0.9375rem;
+  --lg-sm-font: 1.25rem;
+  --md-lg-font: 1rem;
+  --md-font: 0.85rem;
   --sm-font: 0.75rem;
   /* OTHER */
-  --padding: 0.5rem 2rem;
-  --border-radius: 1.5rem;
+  --padding: 0.6rem 2rem;
+  --border-radius: 2rem;
   --card-border-radius: 0.75rem;
 }
 
@@ -32,6 +35,7 @@ header {
   left: 0;
   background: var(--white);
   padding: 0 2.5%;
+  z-index: 100;
 }
 header .user {
   display: flex;
@@ -41,21 +45,23 @@ header .user {
 
 main {
   display: grid;
-  grid-template-columns: 15rem auto 20rem;
+  grid-template-columns: auto 20rem;
   margin: 5.5rem 1rem 0;
+  gap: 2rem;
 }
 
 aside {
-  position: sticky;
-  top: 0;
-  left: 0;
+  z-index: 10;
+  width: 15rem;
+  position: fixed;
+  top: 5.5rem;
 }
 aside .profile {
   background: var(--white);
   border-radius: var(--card-border-radius);
   position: relative;
   padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 aside .profile .img {
   position: absolute;
@@ -88,14 +94,14 @@ aside .profile .handle .btn {
 aside nav {
   background: var(--white);
   border-radius: var(--card-border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 aside nav a {
   display: flex;
   align-items: center;
   gap: 1rem;
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   position: relative;
   padding: 1rem;
   color: var(--primary);
@@ -129,6 +135,168 @@ aside label {
   justify-content: center;
 }
 
+section {
+  margin-left: 17rem;
+}
+section .stories {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+section .stories .story {
+  position: relative;
+  height: 13rem;
+  border-radius: var(--card-border-radius);
+  cursor: pointer;
+  background: center no-repeat var(--white);
+  background-image: url(../img/akash_singh.jpeg);
+  background-size: cover;
+  overflow: hidden;
+}
+section .stories .story::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, hsla(210, 30%, 15%, 0.35), hsla(210, 30%, 98%, 0.35));
+}
+section .stories .story .profile {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+section .stories .story .profile img {
+  border: 3px solid var(--primary);
+}
+section .stories .story p {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+section form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+section form input[type=text] {
+  width: 100%;
+}
+
+.posts .post {
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--card-border-radius);
+  margin-bottom: 2rem;
+}
+.posts .post .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.posts .post .head .handle {
+  line-height: 1.3;
+  cursor: pointer;
+}
+.posts .post .head .control {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.posts .post .head span {
+  font-weight: 600;
+  font-size: var(--lg-sm-font);
+  cursor: pointer;
+}
+.posts .post .text {
+  margin-bottom: 0.5rem;
+}
+.posts .post .img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--card-border-radius);
+  height: 28rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin-bottom: 1.5rem;
+}
+.posts .post .img img {
+  border-radius: var(--card-border-radius);
+  width: 100%;
+  cursor: pointer;
+}
+.posts .post .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+.posts .post .info b {
+  cursor: pointer;
+}
+.posts .post .info .react {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.posts .post .info .react .imgs {
+  gap: 1rem;
+}
+.posts .post .info .react .imgs img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: -0.5rem;
+  border: 3px solid var(--white);
+}
+.posts .post .info .stat {
+  display: flex;
+  gap: 1rem;
+}
+.posts .actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.posts .actions .btn {
+  width: 100%;
+  background: var(--light);
+  justify-content: center;
+  border-radius: var(--card-border-radius);
+}
+.posts .actions .btn:hover:first-child {
+  color: var(--danger);
+  background: hsla(340, 85%, 56%, 0.25);
+}
+.posts .actions .btn:hover:nth-child(2) {
+  color: var(--success);
+  background: hsla(120, 85%, 56%, 0.25);
+}
+.posts .actions .btn:hover:nth-child(3) {
+  color: var(--blue);
+  background: hsla(210, 85%, 56%, 0.25);
+}
+.posts .actions .btn:hover:last-child {
+  color: var(--primary);
+  background: hsl(var(--hue), 85%, 56%, 0.25);
+}
+.posts .actions .btn i {
+  font-size: var(--lg-sm-font);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -149,6 +317,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   cursor: default;
+  font-size: var(--md-font);
 }
 
 h2 {
@@ -156,7 +325,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--md-font);
+  font-size: var(--md-lg-font);
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -165,9 +334,18 @@ a {
   text-decoration: none;
 }
 
+a.td {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
 input {
   background: transparent;
   color: var(--black);
+}
+
+small {
+  font-size: var(--sm-font);
 }
 
 ::-moz-placeholder {
@@ -184,13 +362,15 @@ input {
   background: var(--light);
   padding: var(--padding);
   border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
 }
 .search input {
   width: 30vw;
 }
 .search i {
   color: var(--grey);
-  font-size: var(--lg-font);
+  font-size: var(--lg-sm-font);
 }
 
 .profile {
@@ -202,6 +382,7 @@ input {
   width: 3rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .btn {
@@ -218,6 +399,9 @@ input {
 .btn.primary {
   background: var(--primary);
   color: #fff;
+}
+.btn i {
+  font-size: var(--lg-sm-font);
 }
 
 .primary {
