@@ -18,6 +18,7 @@ body {
    width: 100%;
    overflow-x: hidden;
    cursor: default;
+   font-size: var(--md-font);
 }
 
 h2 {
@@ -25,7 +26,7 @@ h2 {
 }
 
 h3{
-   font-size: var(--md-font);
+   font-size: var(--md-lg-font);
    font-weight: 500;
    text-transform: capitalize;
 }
@@ -33,10 +34,18 @@ h3{
 a {
    text-decoration: none;
 }
+a.td{
+   text-decoration: underline;
+   color: var(--primary);
+}
 
 input {
    background: transparent;
    color: var(--black);
+}
+
+small{
+   font-size: var(--sm-font);
 }
 
 ::placeholder {
@@ -48,13 +57,15 @@ input {
    background: var(--light);
    padding: var(--padding);
    border-radius: var(--border-radius);
+   display: flex;
+   align-items: center;
 
    input {
       width: 30vw;
    }
    i{
       color: var(--grey);
-      font-size: var(--lg-font);
+      font-size: var(--lg-sm-font);
    }
 }
 
@@ -66,6 +77,7 @@ input {
       width: 3rem;
       aspect-ratio: 1/1;
       border-radius: 50%;
+      cursor: pointer;
    }
 }
 
@@ -82,6 +94,9 @@ input {
    &.primary{
       background: var(--primary);
       color: #fff;
+   }
+   i{
+      font-size: var(--lg-sm-font);
    }
 }
 
