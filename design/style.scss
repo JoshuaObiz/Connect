@@ -307,6 +307,14 @@ section {
                background: hsl(var(--hue), 85%, 56%, 0.25);
             }
          }
+         &:first-child.active{
+            color: var(--danger);
+            background: hsl(340, 85%, 56%, 0.25);
+         }
+         &:last-child.active{
+            color: var(--primary);
+            background: hsl(var(--hue), 85%, 56%, 0.25);
+         }
          i {
             font-size: var(--lg-sm-font);
          }
