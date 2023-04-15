@@ -428,6 +428,14 @@ section form input[type=text] {
   color: var(--primary);
   background: hsl(var(--hue), 85%, 56%, 0.25);
 }
+.posts .actions .btn:first-child.active {
+  color: var(--danger);
+  background: hsla(340, 85%, 56%, 0.25);
+}
+.posts .actions .btn:last-child.active {
+  color: var(--primary);
+  background: hsl(var(--hue), 85%, 56%, 0.25);
+}
 .posts .actions .btn i {
   font-size: var(--lg-sm-font);
 }
