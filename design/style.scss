@@ -315,10 +315,14 @@ section {
 }
 
 .right {
-   .messages {
+   >div{
       background: var(--white);
       padding: 1rem;
       border-radius: var(--card-border-radius);
+      margin-bottom: 2rem;
+   }
+
+   .messages {
       .head {
          display: flex;
          align-items: center;
@@ -345,7 +349,9 @@ section {
          align-items: center;
          gap: 1rem;
          cursor: pointer;
-         margin-bottom: 1rem;
+         &:not(:last-child) {
+            margin-bottom: 1rem;
+         }
          .profile {
             position: relative;
             width: max-content;
@@ -367,6 +373,24 @@ section {
                color: var(--primary);
             }
          }
+      }
+   }
+
+   .suggestions{
+      h2{
+         margin-bottom: 2rem;
+      }
+      .suggestion{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 1rem;
+         &:last-child{
+            margin-bottom: 2rem;
+         }
+      }
+      p{
+         font-weight: 500;
       }
    }
 }
