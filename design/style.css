@@ -116,7 +116,6 @@ small {
 .btn {
   padding: var(--padding);
   text-transform: capitalize;
-  background: var(--light);
   border-radius: var(--border-radius);
   font-weight: 600;
   font-size: var(--md-font);
@@ -433,10 +432,11 @@ section form input[type=text] {
   font-size: var(--lg-sm-font);
 }
 
-.right .messages {
+.right > div {
   background: var(--white);
   padding: 1rem;
   border-radius: var(--card-border-radius);
+  margin-bottom: 2rem;
 }
 .right .messages .head {
   display: flex;
@@ -464,6 +464,8 @@ section form input[type=text] {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
+}
+.right .messages .message:not(:last-child) {
   margin-bottom: 1rem;
 }
 .right .messages .message .profile {
@@ -487,4 +489,19 @@ section form input[type=text] {
 }
 .right .messages .message .mark.seen {
   color: var(--primary);
+}
+.right .suggestions h2 {
+  margin-bottom: 2rem;
+}
+.right .suggestions .suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.right .suggestions .suggestion:last-child {
+  margin-bottom: 2rem;
+}
+.right .suggestions p {
+  font-weight: 500;
 }
