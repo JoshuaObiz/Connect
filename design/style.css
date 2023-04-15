@@ -463,6 +463,7 @@ section form input[type=text] {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
   margin-bottom: 1rem;
 }
 .right .messages .message .profile {
