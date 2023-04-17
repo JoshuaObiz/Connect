@@ -1,0 +1,12 @@
+const header = document.querySelector('header')
+const closePost = document.querySelectorAll('.control .close')
+const messages = document.querySelector('.messages')
+const notifications = document.querySelector('.notifications')
+const notificationBtn = document.getElementById('notification')
+const closeNotifications = document.querySelector('.notifications .close')
+const messageBtn = document.getElementById('message')
+const actionBtns = document.querySelectorAll('.actions .btn')
+const followBtns = document.querySelectorAll('.suggestions .btn')
+const themeBtn = document.getElementById('theme')
+const theme = document.querySelector('.theme')
+
