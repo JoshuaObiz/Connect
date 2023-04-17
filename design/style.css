@@ -22,6 +22,7 @@
   --padding: 0.6rem 2rem;
   --border-radius: 2rem;
   --card-border-radius: 0.75rem;
+  --box-shadow: 0 0 2rem hsl(var(--hue), 85%, 56%, 0.5);
 }
 
 * {
@@ -189,14 +190,14 @@ aside {
   height: -moz-max-content;
   height: max-content;
 }
-aside .profile {
+aside > .profile {
   background: var(--white);
   border-radius: var(--card-border-radius);
   position: relative;
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
 }
-aside .profile .img {
+aside > .profile .img {
   position: absolute;
   top: 0;
   left: 0;
@@ -210,16 +211,16 @@ aside .profile .img {
   background: var(--primary);
   cursor: pointer;
 }
-aside .profile .img img {
+aside > .profile .img img {
   position: relative;
   top: 1.75rem;
 }
-aside .profile .handle {
+aside > .profile .handle {
   margin-top: 4.75rem;
   text-align: center;
   width: 100%;
 }
-aside .profile .handle .btn {
+aside > .profile .handle .btn {
   width: 100%;
   justify-content: center;
   margin-top: 1rem;
@@ -238,8 +239,9 @@ aside nav a {
   position: relative;
   padding: 0 2rem;
   color: var(--black);
+  cursor: pointer;
 }
-aside nav a i {
+aside nav a > i {
   color: var(--grey);
   font-size: var(--lg-sm-font) !important;
 }
@@ -267,6 +269,51 @@ aside nav a:last-child::before {
 }
 aside nav a:hover {
   background: var(--light);
+}
+aside .notifications {
+  background: var(--white);
+  width: 30rem;
+  padding: 1rem;
+  border-radius: var(--card-border-radius);
+  position: absolute;
+  left: 16rem;
+  top: -200%;
+  box-shadow: var(--box-shadow);
+  z-index: 5;
+  display: none;
+}
+aside .notifications::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: var(--white);
+  left: -0.5rem;
+  top: 8rem;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+aside .notifications .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+aside .notifications .head i {
+  font-size: var(--lg-font);
+}
+aside .notifications .notification {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--card-border-radius);
+}
+aside .notifications .notification:hover {
+  background: var(--light);
+}
+aside .notifications p {
+  cursor: pointer;
 }
 aside label {
   width: 100%;
