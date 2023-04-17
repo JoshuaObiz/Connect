@@ -24,6 +24,7 @@
    --padding: 0.6rem 2rem;
    --border-radius: 2rem;
    --card-border-radius: 0.75rem;
+   --box-shadow: 0 0 2rem hsl(var(--hue), 85%, 56%, 0.5);
 }
 
 @import 'globals';
@@ -61,7 +62,7 @@ aside {
    bottom: 0;
    left: 0;
    height: max-content;
-   .profile {
+   > .profile {
       background: var(--white);
       border-radius: var(--card-border-radius);
       position: relative;
@@ -109,7 +110,8 @@ aside {
          position: relative;
          padding: 0 2rem;
          color: var(--black);
-         i {
+         cursor: pointer;
+         > i {
             color: var(--grey);
             font-size: var(--lg-sm-font) !important;
          }
@@ -138,6 +140,51 @@ aside {
          &:hover {
             background: var(--light);
          }
+      }
+   }
+   .notifications {
+      background: var(--white);
+      width: 30rem;
+      padding: 1rem;
+      border-radius: var(--card-border-radius);
+      position: absolute;
+      left: 16rem;
+      top: -200%;
+      box-shadow: var(--box-shadow);
+      z-index: 5;
+      display: none;
+      &::before{
+         content: '';
+         position: absolute;
+         width: 2rem;
+         height: 2rem;
+         background: var(--white);
+         left: -0.5rem;
+         top: 8rem;
+         z-index: -1;
+         transform: rotate(45deg);
+      }
+      .head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 2rem;
+         i {
+            font-size: var(--lg-font);
+         }
+      }
+      .notification {
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         padding: 0.75rem;
+         border-radius: var(--card-border-radius);
+         &:hover{
+            background: var(--light);
+         }
+      }
+      p {
+         cursor: pointer;
       }
    }
    label {
@@ -308,11 +355,11 @@ section {
                background: hsl(var(--hue), 85%, 56%, 0.25);
             }
          }
-         &:first-child.active{
+         &:first-child.active {
             color: var(--danger);
             background: hsl(340, 85%, 56%, 0.25);
          }
-         &:last-child.active{
+         &:last-child.active {
             color: var(--primary);
             background: hsl(var(--hue), 85%, 56%, 0.25);
          }
@@ -329,7 +376,7 @@ section {
    bottom: 0;
    left: 0;
    height: max-content;
-   >div{
+   > div {
       background: var(--white);
       padding: 1rem;
       border-radius: var(--card-border-radius);
@@ -390,40 +437,40 @@ section {
       }
    }
 
-   .suggestions{
-      h2{
+   .suggestions {
+      h2 {
          margin-bottom: 2rem;
       }
-      .suggestion{
+      .suggestion {
          display: flex;
          align-items: center;
          justify-content: space-between;
          margin-bottom: 1rem;
-         &:last-child{
+         &:last-child {
             margin-bottom: 2rem;
          }
       }
-      span{
+      span {
          font-weight: 500;
          cursor: pointer;
       }
    }
 
-   .requests{
-      h2{
+   .requests {
+      h2 {
          margin-bottom: 2rem;
       }
-      .request{
+      .request {
          display: flex;
          align-items: center;
          justify-content: space-between;
          margin-bottom: 1.5rem;
-         .btn{
+         .btn {
             gap: 0.5rem;
             padding: 0.6rem 1rem;
          }
       }
-      span{
+      span {
          font-weight: 500;
          cursor: pointer;
       }
