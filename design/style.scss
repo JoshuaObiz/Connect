@@ -49,16 +49,18 @@ header {
 
 main {
    display: grid;
-   grid-template-columns: auto 24rem;
+   grid-template-columns: 15rem auto 24rem;
    margin: 5.5rem 1rem 0;
    gap: 2rem;
 }
 
 aside {
    z-index: 10;
-   width: 15rem;
-   position: fixed;
-   top: 5.5rem;
+   position: sticky;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   height: max-content;
    .profile {
       background: var(--white);
       border-radius: var(--card-border-radius);
@@ -145,7 +147,6 @@ aside {
 }
 
 section {
-   margin-left: 17rem;
    .stories {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -323,6 +324,11 @@ section {
 }
 
 .right {
+   position: sticky;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   height: max-content;
    >div{
       background: var(--white);
       padding: 1rem;
