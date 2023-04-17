@@ -397,8 +397,29 @@ section {
             margin-bottom: 2rem;
          }
       }
-      p{
+      span{
          font-weight: 500;
+         cursor: pointer;
+      }
+   }
+
+   .requests{
+      h2{
+         margin-bottom: 2rem;
+      }
+      .request{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 1.5rem;
+         .btn{
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+         }
+      }
+      span{
+         font-weight: 500;
+         cursor: pointer;
       }
    }
 }
