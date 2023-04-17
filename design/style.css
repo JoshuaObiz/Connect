@@ -510,6 +510,24 @@ section form input[type=text] {
 .right .suggestions .suggestion:last-child {
   margin-bottom: 2rem;
 }
-.right .suggestions p {
+.right .suggestions span {
   font-weight: 500;
+  cursor: pointer;
+}
+.right .requests h2 {
+  margin-bottom: 2rem;
+}
+.right .requests .request {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.right .requests .request .btn {
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+}
+.right .requests span {
+  font-weight: 500;
+  cursor: pointer;
 }
