@@ -1,5 +1,6 @@
 const header = document.querySelector('header')
 const closePost = document.querySelectorAll('.control .close')
+const post = document.querySelectorAll('.post')
 const messages = document.querySelector('.messages')
 const notifications = document.querySelector('.notifications')
 const notificationBtn = document.getElementById('notification')
