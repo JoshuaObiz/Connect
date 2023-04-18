@@ -153,6 +153,11 @@ aside {
       box-shadow: var(--box-shadow);
       z-index: 5;
       display: none;
+      cursor: default;
+      color: var(--black);
+      &.show{
+         display: block;
+      }
       &::before{
          content: '';
          position: absolute;
@@ -164,14 +169,8 @@ aside {
          z-index: -1;
          transform: rotate(45deg);
       }
-      .head {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
+      h2 {
          margin-bottom: 2rem;
-         i {
-            font-size: var(--lg-font);
-         }
       }
       .notification {
          display: flex;
