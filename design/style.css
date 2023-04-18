@@ -281,6 +281,11 @@ aside .notifications {
   box-shadow: var(--box-shadow);
   z-index: 5;
   display: none;
+  cursor: default;
+  color: var(--black);
+}
+aside .notifications.show {
+  display: block;
 }
 aside .notifications::before {
   content: "";
@@ -293,14 +298,8 @@ aside .notifications::before {
   z-index: -1;
   transform: rotate(45deg);
 }
-aside .notifications .head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+aside .notifications h2 {
   margin-bottom: 2rem;
-}
-aside .notifications .head i {
-  font-size: var(--lg-font);
 }
 aside .notifications .notification {
   display: flex;
