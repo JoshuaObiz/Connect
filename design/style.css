@@ -276,7 +276,7 @@ aside .notifications {
   padding: 1rem;
   border-radius: var(--card-border-radius);
   position: absolute;
-  left: 16rem;
+  left: calc(100% + 1rem);
   top: -200%;
   box-shadow: var(--box-shadow);
   z-index: 5;
@@ -584,4 +584,47 @@ section form input[type=text] {
 .right .requests span {
   font-weight: 500;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    grid-template-columns: 5rem auto 23rem;
+    gap: 1rem;
+  }
+  aside {
+    width: 5rem;
+  }
+  aside .profile {
+    position: static;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  aside .profile .img {
+    position: static;
+    background: none;
+  }
+  aside .profile .img img {
+    position: static;
+  }
+  aside .profile .handle, aside .profile .btn {
+    display: none;
+  }
+  aside nav a {
+    justify-content: center;
+  }
+  aside nav a h3 {
+    display: none;
+  }
+  aside label.btn {
+    display: none;
+  }
+}
+@media screen and (max-width: 1010px) {
+  section .stories {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+  }
+  section .stories .story:last-child {
+    display: none;
+  }
 }
