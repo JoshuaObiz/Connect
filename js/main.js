@@ -1,6 +1,6 @@
 const header = document.querySelector('header');
 const links = document.querySelectorAll('nav a');
-const closePost = document.querySelectorAll('.control .close');
+const closePost = document.querySelectorAll('.post .close');
 const posts = document.querySelectorAll('.post');
 const messages = document.querySelector('.messages');
 const messageBtn = document.getElementById('message');
@@ -10,11 +10,6 @@ const actionBtns = document.querySelectorAll('.actions .btn');
 const followBtns = document.querySelectorAll('.suggestions .btn');
 const themeBtn = document.getElementById('theme');
 const theme = document.querySelector('.theme');
-
-notificationBtn.addEventListener('click', () => {
-   notifications.classList.toggle('show');
-   document.querySelector('#notification .count').style.display = 'none';
-});
 
 messageBtn.addEventListener('click', () => {
    // messages.style.boxShadow = 'var(--box-shadow)'
@@ -34,16 +29,31 @@ function removeActiveLink() {
    });
 }
 
+notificationBtn.addEventListener('click', () => {
+   notifications.classList.toggle('show');
+   document.querySelector('#notification .count').style.display = 'none';
+});
+if (notificationBtn.classList.contains('active')){
+   notificationBtn.classList.remove('active')
+   console.log('kfhsgdbja');
+}
+
 followBtns.forEach((followBtn) => {
    followBtn.addEventListener('click', () => {
       const initialText = 'Follow';
 
-      if (
-         followBtn.textContent.toLowerCase().includes(initialText.toLowerCase())
-      ) {
-         followBtn.textContent = 'Following';
+      if (followBtn.textContent.toLowerCase() == initialText.toLowerCase()) {
+         followBtn.textContent = 'Unfollow';
       } else {
          followBtn.textContent = initialText;
       }
+
+      followBtn.classList.toggle('primary');
+   });
+});
+
+closePost.forEach((close) => {
+   close.addEventListener('click', ()=>{
+      
    });
 });
