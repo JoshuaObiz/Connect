@@ -1,74 +1,75 @@
 @media screen and (max-width: 1200px) {
-   main{
+   main {
       grid-template-columns: 5rem auto 23rem;
       gap: 1rem;
    }
 
-   aside{
+   aside {
       width: 5rem;
-      .profile{
+      .profile {
          position: static;
          padding: 0;
          margin-bottom: 2rem;
-         .img{
+         .img {
             position: static;
             background: none;
-            img{
+            img {
                position: static;
             }
          }
-         .handle, .btn{
+         .handle,
+         .btn {
             display: none;
          }
       }
 
-      nav{
-         a{
+      nav {
+         a {
             justify-content: center;
-            h3{
+            h3 {
                display: none;
             }
          }
       }
 
-      label.btn{
+      label.btn {
          display: none;
       }
    }
 }
 
 @media screen and (max-width: 1010px) {
-   main{
+   main {
       grid-template-columns: auto 22rem;
    }
-   aside{
+   aside {
       position: fixed;
       top: 10rem;
       left: 1rem;
-      >.profile{
+      > .profile {
          display: none;
       }
       box-shadow: 0 0 1rem var(--grey);
       border-radius: var(--card-border-radius);
-      nav{
+      nav {
          margin-bottom: 0;
       }
-      .notifications{
-         .notification{
+      .notifications {
+         .notification {
             align-items: center;
             display: flex;
-            .profile{
+            .profile {
                margin-bottom: 0;
             }
          }
       }
    }
-   section{
-      .stories{
+   section {
+      .stories {
          grid-template-columns: repeat(5, 1fr);
          gap: 0.75rem;
-         .story{
-            &:last-child{
+         .story {
+            &:last-child {
                display: none;
             }
          }
@@ -77,18 +78,30 @@
 }
 
 @media screen and (max-width: 895px) {
-   main{
+   main {
       grid-template-columns: auto;
    }
 
-   aside{
+   header {
+      .user {
+         gap: 1rem;
+      }
+      .menu {
+         display: inline-flex;
+      }
+      label.btn {
+         display: none;
+      }
+   }
+
+   aside {
       left: 0;
       top: auto;
       bottom: 0;
       width: 100%;
-      nav{
+      nav {
          display: flex;
-         a.active::before{
+         a.active::before {
             top: auto;
             bottom: 0;
             width: 100%;
@@ -98,11 +111,11 @@
             border-radius: 0;
          }
       }
-      .notifications{
+      .notifications {
          bottom: 5rem;
          top: auto;
          left: -100%;
-         &::before{
+         &::before {
             top: auto;
             bottom: -0.5rem;
             left: calc(50% - 1rem);
@@ -110,19 +123,33 @@
       }
    }
 
-   section{
-      .stories{
+   section {
+      .stories {
          grid-template-columns: repeat(6, 1fr);
          gap: 0.75rem;
-         .story{
-            &:last-child{
+         .story {
+            &:last-child {
                display: block;
             }
          }
       }
    }
 
-   .right{
+   .right {
       display: none;
+      position: absolute;
+      background: var(--white);
+      width: 100vw;
+      height: max-content;
+      right: 0;
+      left: auto;
+      z-index: 110;
+      padding: 2rem 1rem;
+      box-shadow: 0 0 1rem hsl(210, 30%, 15%, 0.25);
+      border-bottom-left-radius: var(--card-border-radius);
+      border-bottom-right-radius: var(--card-border-radius);
+      .close{
+         display: block;
+      }
    }
 }
