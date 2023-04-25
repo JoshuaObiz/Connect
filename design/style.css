@@ -32,7 +32,7 @@
   border: 0;
   outline: none;
   font-family: var(--font);
-  transition: 300ms all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 200ms all linear;
 }
 
 html {
@@ -261,8 +261,16 @@ aside nav a.active::before {
 aside nav a.active i {
   color: var(--primary);
 }
+aside nav a:first-child {
+  border-top-right-radius: var(--card-border-radius);
+  border-top-left-radius: var(--card-border-radius);
+}
 aside nav a:first-child::before {
   border-top-left-radius: var(--card-border-radius);
+}
+aside nav a:last-child {
+  border-bottom-right-radius: var(--card-border-radius);
+  border-bottom-left-radius: var(--card-border-radius);
 }
 aside nav a:last-child::before {
   border-bottom-left-radius: var(--card-border-radius);
@@ -504,7 +512,7 @@ section form input[type=text] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .right .messages .head span {
   font-size: var(--lg-sm-font);
@@ -520,6 +528,13 @@ section form input[type=text] {
   border-radius: 50%;
   cursor: pointer;
   color: var(--primary);
+}
+.right .messages .search {
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
+}
+.right .messages .search input {
+  width: 100%;
 }
 .right .messages .message {
   display: flex;
@@ -620,11 +635,77 @@ section form input[type=text] {
   }
 }
 @media screen and (max-width: 1010px) {
+  main {
+    grid-template-columns: auto 22rem;
+  }
+  aside {
+    position: fixed;
+    top: 10rem;
+    left: 1rem;
+    box-shadow: 0 0 1rem var(--grey);
+    border-radius: var(--card-border-radius);
+  }
+  aside > .profile {
+    display: none;
+  }
+  aside nav {
+    margin-bottom: 0;
+  }
+  aside .notifications .notification {
+    align-items: center;
+    display: flex;
+  }
+  aside .notifications .notification .profile {
+    margin-bottom: 0;
+  }
   section .stories {
     grid-template-columns: repeat(5, 1fr);
     gap: 0.75rem;
   }
   section .stories .story:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 895px) {
+  main {
+    grid-template-columns: auto;
+  }
+  aside {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+  }
+  aside nav {
+    display: flex;
+  }
+  aside nav a.active::before {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    left: auto;
+    right: 0;
+    height: 0.25rem;
+    border-radius: 0;
+  }
+  aside .notifications {
+    bottom: 5rem;
+    top: auto;
+    left: -100%;
+  }
+  aside .notifications::before {
+    top: auto;
+    bottom: -0.5rem;
+    left: calc(50% - 1rem);
+  }
+  section .stories {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+  }
+  section .stories .story:last-child {
+    display: block;
+  }
+  .right {
     display: none;
   }
 }
