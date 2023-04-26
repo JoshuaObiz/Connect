@@ -80,6 +80,7 @@
 @media screen and (max-width: 895px) {
    main {
       grid-template-columns: auto;
+      margin: 5.5rem 1%;
    }
 
    header {
@@ -125,11 +126,13 @@
 
    section {
       .stories {
-         grid-template-columns: repeat(6, 1fr);
+         display: flex;
+         align-items: center;
          gap: 0.75rem;
          .story {
+            width: 100%;
             &:last-child {
-               display: block;
+               display: none;
             }
          }
       }
@@ -148,8 +151,34 @@
       box-shadow: 0 0 1rem hsl(210, 30%, 15%, 0.25);
       border-bottom-left-radius: var(--card-border-radius);
       border-bottom-right-radius: var(--card-border-radius);
-      .close{
+      .close {
          display: block;
+      }
+   }
+}
+
+@media screen and (max-width: 572px) {
+   header{
+      .search{
+         display: none;
+      }
+   }
+
+   section {
+      .stories {
+         gap: 0.5rem;
+         .story {
+            width: 100%;
+            &:nth-child(5) {
+               display: none;
+            }
+         }
+      }
+   }
+
+   form{
+      input[type='text']{
+         width: auto;
       }
    }
 }

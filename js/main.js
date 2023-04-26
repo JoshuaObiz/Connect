@@ -7,13 +7,16 @@ const messageBtn = document.getElementById('message');
 const notifications = document.querySelector('.notifications');
 const notificationBtn = document.getElementById('notification');
 const actionBtns = document.querySelectorAll('.actions .btn');
+const likeBtns = document.querySelectorAll('.actions .like');
+const saveBtns = document.querySelectorAll('.actions .save');
+
 const followBtns = document.querySelectorAll('.suggestions .btn');
 const themeBtn = document.getElementById('theme');
 const theme = document.querySelector('.theme');
 
 messageBtn.addEventListener('click', () => {
-   // messages.style.boxShadow = 'var(--box-shadow)'
-   setTimeout((messages.style.boxShadow = 'var(--box-shadow)'), 3000000);
+   messages.style.boxShadow = 'var(--box-shadow)'
+   document.querySelector('#message .count').style.display = 'none';
 });
 
 links.forEach((link) => {
@@ -35,7 +38,6 @@ notificationBtn.addEventListener('click', () => {
 });
 if (notificationBtn.classList.contains('active')){
    notificationBtn.classList.remove('active')
-   console.log('kfhsgdbja');
 }
 
 followBtns.forEach((followBtn) => {
@@ -52,8 +54,28 @@ followBtns.forEach((followBtn) => {
    });
 });
 
-closePost.forEach((close) => {
-   close.addEventListener('click', ()=>{
-      
-   });
+actionBtns.forEach(action => {
+   action.addEventListener('click', ()=>{
+      action.classList.toggle('active')
+   })
+});
+
+likeBtns.forEach(like => {
+   like.addEventListener('click', ()=>{
+      if (like.classList.contains('active') && like.classList.contains('like')) {
+         like.innerHTML = `<i class="eva eva-heart"></i> liked`
+      }else{
+         like.innerHTML = `<i class="eva eva-heart-outline"></i> like`
+      }
+   })
+});
+
+saveBtns.forEach(save => {
+   save.addEventListener('click', ()=>{
+      if (save.classList.contains('active') && save.classList.contains('save')) {
+         save.innerHTML = `<i class="eva eva-bookmark"></i> saved`
+      }else{
+         save.innerHTML = `<i class="eva eva-bookmark-outline"></i> save`
+      }
+   })
 });
