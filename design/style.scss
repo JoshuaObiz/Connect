@@ -4,13 +4,13 @@
    --primary: hsl(var(--hue), 85%, 56%);
    --blue: hsl(210, 85%, 56%);
    --danger: hsl(340, 85%, 56%);
-   --warning: hsl(60, 85%, 56%);
-   --success: hsl(110, 85%, 56%);
+   --warning: hsl(55, 85%, 56%);
+   --success: hsl(150, 85%, 56%);
    --grey: hsl(210, 30%, 85%);
-   --light: hsl(210, 30%, 98%);
    --secondary: hsl(var(--hue), 75%, 95%);
-   --dark: hsl(210, 30%, 25%);
+   --light: hsl(210, 30%, 98%);
    --white: hsl(210, 30%, 100%);
+   --dark: hsl(210, 30%, 25%);
    --black: hsl(210, 30%, 10%);
 
    /* TYPOGRAPHY AND FONTS */
@@ -192,6 +192,9 @@ aside {
          gap: 1rem;
          padding: 0.75rem;
          border-radius: var(--card-border-radius);
+         .profile{
+            margin-bottom: 0;
+         }
          &:hover {
             background: var(--light);
          }
@@ -349,6 +352,7 @@ section {
          width: 100%;
          background: var(--light);
          justify-content: center;
+         color: var(--black);
          border-radius: var(--card-border-radius);
          &:hover {
             &:first-child {
@@ -517,7 +521,7 @@ section {
    left: 0;
    z-index: 1000;
    background: hsl(210, 30%, 98%, 0.5);
-   display: none;
+   display: flex;
    align-items: center;
    justify-content: center;
    .container {
@@ -566,13 +570,13 @@ section {
                background: hsl(340, 85%, 56%);
             }
             &:nth-child(2) {
-               background: hsl(60, 85%, 56%);
+               background: hsl(55, 85%, 56%);
             }
             &:nth-child(3) {
                background: hsl(210, 85%, 56%);
             }
             &:nth-child(4) {
-               background: hsl(110, 85%, 56%);
+               background: hsl(150, 85%, 56%);
             }
             &:nth-child(5) {
                background: hsl(270, 85%, 56%);
