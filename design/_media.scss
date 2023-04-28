@@ -58,9 +58,6 @@
          .notification {
             align-items: center;
             display: flex;
-            .profile {
-               margin-bottom: 0;
-            }
          }
       }
    }
@@ -153,6 +150,15 @@
       border-bottom-right-radius: var(--card-border-radius);
       .close {
          display: block;
+      }
+   }
+
+   .theme{
+      .container{
+         width: 98%;
+         >div>div{
+            flex-wrap: wrap;
+         }
       }
    }
 }
