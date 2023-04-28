@@ -623,7 +623,7 @@ section form input[type=text] {
   left: 0;
   z-index: 1000;
   background: hsla(210, 30%, 98%, 0.5);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
