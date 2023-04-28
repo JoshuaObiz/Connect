@@ -13,11 +13,24 @@ const saveBtns = document.querySelectorAll('.actions .save');
 const followBtns = document.querySelectorAll('.suggestions .btn');
 const themeBtn = document.getElementById('theme');
 const theme = document.querySelector('.theme');
+const themeColors = document.querySelectorAll('.theme-color span');
+const background = document.querySelectorAll('.bg .btn');
+const fontSize = document.querySelector('.font-size span');
 
-messageBtn.addEventListener('click', () => {
-   messages.style.boxShadow = 'var(--box-shadow)'
-   document.querySelector('#message .count').style.display = 'none';
-});
+const body = document.querySelector('body')
+
+body.addEventListener('click', (e)=>{
+   if (e.target.classList.contains('theme')) {   
+      theme.style.display = 'none'
+   }
+   if (e.target.classList != 'notifications' && e.target.id != 'notification' && e.target.className != 'eva eva-bell-outline') {
+      notifications.classList.remove('show')
+      if (notificationBtn.classList.contains('active')) {
+         document.querySelector('nav a:first-child').classList.add('active')
+         notificationBtn.classList.remove('active')
+      }
+   }
+})
 
 links.forEach((link) => {
    link.addEventListener('click', () => {
@@ -32,30 +45,13 @@ function removeActiveLink() {
    });
 }
 
-notificationBtn.addEventListener('click', () => {
-   notifications.classList.toggle('show');
-   document.querySelector('#notification .count').style.display = 'none';
-});
-if (notificationBtn.classList.contains('active')){
-   notificationBtn.classList.remove('active')
-}
-
-followBtns.forEach((followBtn) => {
-   followBtn.addEventListener('click', () => {
-      const initialText = 'Follow';
-
-      if (followBtn.textContent.toLowerCase() == initialText.toLowerCase()) {
-         followBtn.textContent = 'Unfollow';
-      } else {
-         followBtn.textContent = initialText;
-      }
-
-      followBtn.classList.toggle('primary');
-   });
+messageBtn.addEventListener('click', () => {
+   messages.style.boxShadow = 'var(--box-shadow)'
+   document.querySelector('#message .count').style.display = 'none';
 });
 
 actionBtns.forEach(action => {
-   action.addEventListener('click', ()=>{
+   action.addEventListener('click', (e)=>{
       action.classList.toggle('active')
    })
 });
@@ -79,3 +75,26 @@ saveBtns.forEach(save => {
       }
    })
 });
+
+notificationBtn.addEventListener('click', () => {
+   notifications.classList.add('show');
+   document.querySelector('#notification .count').style.display = 'none';
+});
+
+followBtns.forEach((followBtn) => {
+   followBtn.addEventListener('click', () => {
+      const initialText = 'Follow';
+
+      if (followBtn.textContent.toLowerCase() == initialText.toLowerCase()) {
+         followBtn.textContent = 'Unfollow';
+      } else {
+         followBtn.textContent = initialText;
+      }
+
+      followBtn.classList.toggle('primary');
+   });
+});
+
+themeBtn.addEventListener('click', ()=>{
+   theme.style.display = 'flex'
+})
