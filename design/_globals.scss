@@ -6,6 +6,9 @@
    outline: none;
    font-family: var(--font);
    transition: 200ms all linear;
+   &::selection{
+      background: hsl(var(--hue), 85%, 56%, .25);
+   }
 }
 
 html {
