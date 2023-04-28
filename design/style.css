@@ -49,7 +49,6 @@ html {
 
 body {
   background: var(--light);
-  width: 100%;
   overflow-x: hidden;
   cursor: default;
   font-size: var(--md-font);
@@ -175,15 +174,13 @@ header {
   padding: 0 2.5%;
   z-index: 100;
 }
+header.box-shadow {
+  box-shadow: 0 0 1rem hsla(210, 30%, 15%, 0.25);
+}
 header .user {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-header .menu {
-  font-size: var(--lg-font);
-  cursor: pointer;
-  display: none;
 }
 
 main {
@@ -194,7 +191,7 @@ main {
 }
 
 aside {
-  z-index: 10;
+  z-index: 110;
   position: sticky;
   top: 0;
   bottom: 0;
@@ -633,7 +630,7 @@ section form input[type=text] {
   left: 0;
   z-index: 1000;
   background: hsla(210, 30%, 98%, 0.5);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -772,7 +769,7 @@ section form input[type=text] {
     position: fixed;
     top: 10rem;
     left: 1rem;
-    box-shadow: 0 0 1rem var(--grey);
+    box-shadow: 0 0 1rem hsla(210, 30%, 10%, 0.25);
     border-radius: var(--card-border-radius);
   }
   aside > .profile {
@@ -798,11 +795,11 @@ section form input[type=text] {
     grid-template-columns: auto;
     margin: 5.5rem 1%;
   }
+  main section, main aside, main .right {
+    margin: 0;
+  }
   header .user {
     gap: 1rem;
-  }
-  header .menu {
-    display: inline-flex;
   }
   header label.btn {
     display: none;
@@ -812,9 +809,13 @@ section form input[type=text] {
     top: auto;
     bottom: 0;
     width: 100%;
+    border-radius: 0;
   }
   aside nav {
     display: flex;
+    border-radius: 0;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
   }
   aside nav a.active::before {
     top: auto;
@@ -828,7 +829,10 @@ section form input[type=text] {
   aside .notifications {
     bottom: 5rem;
     top: auto;
-    left: -100%;
+    left: auto;
+  }
+  aside .notifications h2 {
+    margin-bottom: 1rem;
   }
   aside .notifications::before {
     top: auto;
@@ -847,28 +851,29 @@ section form input[type=text] {
     display: none;
   }
   .right {
-    display: none;
     position: absolute;
     background: var(--white);
-    width: 100vw;
+    width: 100%;
     height: -moz-max-content;
     height: max-content;
     right: 0;
+    top: 0;
     left: auto;
-    z-index: 110;
-    padding: 2rem 1rem;
+    z-index: 101;
+    padding: 3rem 1rem 1rem;
     box-shadow: 0 0 1rem hsla(210, 30%, 15%, 0.25);
     border-bottom-left-radius: var(--card-border-radius);
     border-bottom-right-radius: var(--card-border-radius);
+    top: -200%;
+  }
+  .right.show {
+    top: 0;
   }
   .right .close {
     display: block;
   }
   .theme .container {
     width: 98%;
-  }
-  .theme .container > div > div {
-    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 572px) {
@@ -886,5 +891,23 @@ section form input[type=text] {
   }
   form input[type=text] {
     width: auto;
+  }
+  .bg {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 514px) {
+  .theme .container .bg {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .theme .container .bg .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

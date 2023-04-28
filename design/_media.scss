@@ -49,7 +49,7 @@
       > .profile {
          display: none;
       }
-      box-shadow: 0 0 1rem var(--grey);
+      box-shadow: 0 0 1rem hsl(210, 30%, 10%, .25);
       border-radius: var(--card-border-radius);
       nav {
          margin-bottom: 0;
@@ -78,14 +78,14 @@
    main {
       grid-template-columns: auto;
       margin: 5.5rem 1%;
+      section, aside, .right{
+         margin: 0;
+      }
    }
 
    header {
       .user {
          gap: 1rem;
-      }
-      .menu {
-         display: inline-flex;
       }
       label.btn {
          display: none;
@@ -97,8 +97,12 @@
       top: auto;
       bottom: 0;
       width: 100%;
+      border-radius: 0;
       nav {
          display: flex;
+         border-radius: 0;
+         border-top-right-radius: 1rem;
+         border-top-left-radius: 1rem;
          a.active::before {
             top: auto;
             bottom: 0;
@@ -112,7 +116,10 @@
       .notifications {
          bottom: 5rem;
          top: auto;
-         left: -100%;
+         left: auto;
+         h2{
+            margin-bottom: 1rem;
+         }
          &::before {
             top: auto;
             bottom: -0.5rem;
@@ -136,18 +143,22 @@
    }
 
    .right {
-      display: none;
       position: absolute;
       background: var(--white);
-      width: 100vw;
+      width: 100%;
       height: max-content;
       right: 0;
+      top: 0;
       left: auto;
-      z-index: 110;
-      padding: 2rem 1rem;
+      z-index: 101;
+      padding: 3rem 1rem 1rem;
       box-shadow: 0 0 1rem hsl(210, 30%, 15%, 0.25);
       border-bottom-left-radius: var(--card-border-radius);
       border-bottom-right-radius: var(--card-border-radius);
+      top: -200%;
+      &.show{
+         top: 0;
+      }
       .close {
          display: block;
       }
@@ -156,9 +167,6 @@
    .theme{
       .container{
          width: 98%;
-         >div>div{
-            flex-wrap: wrap;
-         }
       }
    }
 }
@@ -185,6 +193,30 @@
    form{
       input[type='text']{
          width: auto;
+      }
+   }
+
+   .bg{
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+@media screen and (max-width: 514px) {
+   .theme{
+      .container{
+         .bg{
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            .btn{
+               width: 100%;
+               justify-content: center;
+            }
+         }
       }
    }
 }

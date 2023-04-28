@@ -42,15 +42,13 @@ header {
    background: var(--white);
    padding: 0 2.5%;
    z-index: 100;
+   &.box-shadow{
+      box-shadow: 0 0 1rem hsl(210, 30%, 15%, 0.25);
+   }
    .user {
       display: flex;
       align-items: center;
       gap: 2rem;
-   }
-   .menu {
-      font-size: var(--lg-font);
-      cursor: pointer;
-      display: none;
    }
 }
 
@@ -62,7 +60,7 @@ main {
 }
 
 aside {
-   z-index: 10;
+   z-index: 110;
    position: sticky;
    top: 0;
    bottom: 0;
@@ -521,7 +519,7 @@ section {
    left: 0;
    z-index: 1000;
    background: hsl(210, 30%, 98%, 0.5);
-   display: flex;
+   display: none;
    align-items: center;
    justify-content: center;
    .container {

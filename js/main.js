@@ -37,6 +37,14 @@ body.addEventListener('click', (e)=>{
          notificationBtn.classList.remove('active')
       }
    }
+
+   if (e.target.id != 'message' && e.target.className != 'eva eva-email-outline' && e.target.innerHTML != `messages`) {
+      messages.style.boxShadow = ''
+   }
+})
+
+window.addEventListener('scroll', ()=>{
+   header.classList.toggle('box-shadow', scrollY > 56)
 })
 
 links.forEach((link) => {
@@ -49,6 +57,7 @@ links.forEach((link) => {
 messageBtn.addEventListener('click', () => {
    messages.style.boxShadow = 'var(--box-shadow)'
    document.querySelector('#message .count').style.display = 'none';
+   document.querySelector('.right').classList.toggle('show')
 });
 
 actionBtns.forEach(action => {
